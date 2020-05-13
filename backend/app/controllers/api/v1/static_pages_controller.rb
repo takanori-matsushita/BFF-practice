@@ -1,21 +1,27 @@
 module Api
   module V1
     class StaticPagesController < ApplicationController
+
       def home
-        render json: {title: "Home | Ruby on Rails Tutorial Sample App"}
+        title = full_title()
+        render json: {title: title}
       end
       
       def help
-        render json: {title: "Help | Ruby on Rails Tutorial Sample App"}
+        title = full_title("Help")
+        render json: {title: title}
       end
 
       def about
-        render json: {title: "About | Ruby on Rails Tutorial Sample App"}
+        title = full_title("About")
+        render json: {title: title}
       end
 
       def contact
-        render json: {title: "Contact | Ruby on Rails Tutorial Sample App"}
+        title = full_title("Contact")
+        render json: {title: title}
       end
+
     end
   end
 end
