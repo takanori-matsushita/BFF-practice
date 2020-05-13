@@ -11,7 +11,7 @@ RSpec.describe "StaticPages", type: :request do
       get "/api/v1"
       expect(response).to have_http_status(:success)
       json = JSON.parse(response.body)
-      expect(json['title']).to eq("Home | #{@base_title}")
+      expect(json['title']).to eq("#{@base_title}")
     end
   end
 
@@ -20,7 +20,7 @@ RSpec.describe "StaticPages", type: :request do
       get "/api/v1/static_pages/home"
       expect(response).to have_http_status(:success)
       json = JSON.parse(response.body)
-      expect(json['title']).to eq("Home | #{@base_title}")
+      expect(json['title']).to eq("#{@base_title}")
     end
   end
   
